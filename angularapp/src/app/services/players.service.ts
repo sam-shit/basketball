@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Player } from '../models/player';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +16,10 @@ export class PlayersService {
     return this.httpclient.get<any[]>(this.apiURL + '/players')
   }
 
-  
+  httpOptions = {headers : new HttpHeaders({'content-type' : 'application/json'})}
+
+  createPlayer(player : any) : Observable<any> {
+    return this.httpclient.post<any>(this.apiURL + '/Players', player, this.httpOptions)
+  }
+
 }
