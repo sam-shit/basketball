@@ -24,10 +24,13 @@ export class CreateComponent implements OnInit {
   })
 
     onSubmit(formData : FormGroup) {
-      this.formData = this.createForm
-      this.ms.createPlayer(this.formData).subscribe(() => {
-        // alert('Created')
-      })
+      if(this.createForm.valid) {
+
+        this.formData = this.createForm
+        this.ms.createPlayer(this.formData).subscribe(() => {
+          // alert('Created')
+        })
+      }
     }
 
 
