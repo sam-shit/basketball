@@ -16,11 +16,11 @@ export class CreateComponent implements OnInit {
   formData : any
   positions : any[] = []
   createForm = this.fb.group({
-    shirtno : ['Test Shirt No', Validators.required],
-    name : ['Test Name', Validators.required],
-    positionid : ['1'],
-    appearances : ['10'],
-    goals : ['5']
+    shirtno : ['', Validators.required],
+    name : ['', Validators.required],
+    positionid : ['', Validators.required],
+    appearances : ['', Validators.required],
+    goals : ['', Validators.required]
   })
 
     onSubmit(formData : FormGroup) {

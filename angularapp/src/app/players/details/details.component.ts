@@ -14,13 +14,13 @@ export class DetailsComponent implements OnInit {
   playerData : any[] = []
   player : any
 
-  getPlayer() : any[] {
+  getPlayers() : any[] {
     this.ms.getPlayers().subscribe(data => {this.playerData.push(...data)})
     return this.playerData
   }
 
   ngOnInit(): void {
-    this.getPlayer()
+    this.getPlayers()
   }
 
 }
