@@ -1,1 +1,21 @@
-<p>create works!</p>
+<h3>Create Player</h3>
+<form [formGroup]="createForm" (ngSubmit)="onSubmit(formData)">
+    <label for="shirtno">Shirt No:</label>
+    <input type="text" id="shirtno" formControlName="shirtno">
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name">
+
+    <label for="positionid">Position:</label>
+    <select name="positionid" id="positionid" formControlName="positionid">
+        <option *ngFor="let m of positions" [value]="m.id">{{m.name}}</option>
+    </select>
+
+    <label for="appearances">Appearances:</label>
+    <input type="text" id="appearances" formControlName="appearances">
+
+    <label for="goals">Goals:</label>
+    <input type="text" id="goals" formControlName="goals">
+
+    <button type="submit">Create</button>
+</form>

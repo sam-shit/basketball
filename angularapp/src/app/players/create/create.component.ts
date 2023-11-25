@@ -18,15 +18,15 @@ export class CreateComponent implements OnInit {
   createForm = this.fb.group({
     shirtno : ['Test Shirt No', Validators.required],
     name : ['Test Name', Validators.required],
-    positionid : ['1', Validators.required],
-    appearances : ['10', Validators.required],
-    goals : ['5', Validators.required]
+    positionid : ['1'],
+    appearances : ['10'],
+    goals : ['5']
   })
 
     onSubmit(formData : FormGroup) {
       this.formData = this.createForm
       this.ms.createPlayer(this.formData).subscribe(() => {
-        alert('Created')
+        // alert('Created')
       })
     }
 
