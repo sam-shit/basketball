@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { CreateComponent } from './create/create.component';
 import { DetailsComponent } from './players/details/details.component';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     CreateComponent,
-    DetailsComponent
+    DetailsComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
