@@ -22,4 +22,8 @@ export class PlayersService {
     return this.httpclient.post<any>(this.apiURL + '/Players', player, this.httpOptions)
   }
 
+  getPlayer(id : number) : Observable<any> {
+    return this.httpclient.get<any>(this.apiURL + '/Players/' + id)
+  }
+
 }

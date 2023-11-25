@@ -13,7 +13,7 @@ export class DetailsComponent implements OnInit {
   constructor(private ms : PlayersService) { }
 
   playerData : any[] = []
-  player : {id : number, name : string, shirtno : number, position : Position, appearances : number, goals : number} = {
+  player : {id : number, name : string, shirtno : number, position : {id : number, name : string}, appearances : number, goals : number} = {
     id: 1,
     name: 'Test Player',
     shirtno: 10,
@@ -22,13 +22,16 @@ export class DetailsComponent implements OnInit {
     goals: 10,
   }
 
-  getPlayers() : any[] {
-    this.ms.getPlayers().subscribe(data => {this.playerData.push(...data)})
-    return this.playerData
-  }
+  id : number
+
+  // getPlayers(id : number) {
+ 
+  // }
 
   ngOnInit(): void {
-    this.getPlayers()
+    this.ms.getPlayer(this.id).subscribe((data : any) => {
+      this.playerData = data
+    })
   }
 
 }
